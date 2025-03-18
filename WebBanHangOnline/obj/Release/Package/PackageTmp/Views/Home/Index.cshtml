@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = ViewBag.Title;
+    ViewBag.SeoDescription = ViewBag.SeoDescription;
+}
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+<!-- Slider -->
+<style>
+    .main_slider_content h4,
+    .main_slider_content h1 {
+        color: white;
+    }
+</style>
+<div class="main_slider" style="background-image:url(Content/assets/images/1125.jpg)">
+    <div class="container fill_height">
+        <div class="row align-items-center fill_height">
+            <div class="col">
+                <div class="main_slider_content">
+                    <h4>Nước khoáng</h4>
+                    <h1>Tinh Chất Của Thiên Nhiên</h1>
+                    <div class="red_button shop_now_button"><a href="/products">Đặt hàng ngay</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Banner -->
+@Html.Action("MenuProductCategory", "Menu")
+
+<!-- New Arrivals -->
+
+<div class="new_arrivals">
+    <div class="container">
+        @Html.Action("MenuArrivals", "Menu")
+    </div>
+</div>
+
+<!-- Deal of the week -->
+<div class="deal_ofthe_week_img">
+    <div class="col-lg-6">
+        <video width="1900px" height="500px" controls>
+            <source src="~/Content/assets/videos/qcao1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+</div>
+
+
+<!-- Best Sellers -->
+@Html.Action("Partial_ProductSales", "Products")
+<!-- Benefit -->
+
+<div class="benefit">
+    <div class="container">
+        <div class="row benefit_row">
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>free shipping</h6>
+                        <p>Mua trên 3 thùng miễn phí vận chuyển</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>Thanh toán khi nhận hàng</h6>
+                        <p>Uy tín làm nên thương hiệu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>Sản phẩm đa dạng</h6>
+                        <p>Nước 20L,19L,18.5L</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>Mở cửa tất cả các ngày trong tuần</h6>
+                        <p>8AM - 09PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blogs -->
+@Html.Action("Partial_News_Home", "News")

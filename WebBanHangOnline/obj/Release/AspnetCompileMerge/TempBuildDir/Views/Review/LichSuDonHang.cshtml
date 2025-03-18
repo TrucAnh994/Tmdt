@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebBanHangOnline.Models.EF.OrderHistory>
+@if (Model != null)
+{
+    var i = 1;
+    <h2>Lịch Sử Mua Hàng </h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>STT</td>
+                <td>Mã DH</td>
+                <td>Tên Sản Phẩm</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                var productCount = order.ProductNames.Count;
+                <tr>
+                    <td rowspan="@productCount">@i</td>
+                    <td rowspan="@productCount">@order.Code</td>
+                    <td>@order.ProductNames[0]</td>
+                </tr>
+                for (var j = 1; j < productCount; j++)
+                {
+                    <tr>
+                        <td>@order.ProductNames[j]</td>
+                    </tr>
+                }
+                i++;
+            }
+        </tbody>
+    </table>
+}
